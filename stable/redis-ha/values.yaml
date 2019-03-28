@@ -148,7 +148,7 @@ persistentVolume:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: "nfs-client-provisioner"
+  # storageClass: "nfs-client-provisioner"
   accessModes:
     - ReadWriteOnce
   size: 10Gi
@@ -161,7 +161,7 @@ init:
 # Warning: this might overwrite existing folders on the host system!
 hostPath:
   ## path is evaluated as template so placeholders are replaced
-  # path: "/data/{{ .Release.Name }}"
+   path: "/home/{{ .Release.Name }}"
 
   # if chown is true, an init-container with root permissions is launched to
   # change the owner of the hostPath folder to the user defined in the
